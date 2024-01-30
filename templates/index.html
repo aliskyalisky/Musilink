@@ -1,0 +1,17 @@
+{% if session.user_id %}
+Olet kirjautunut sisään käyttäjänä {{ session.username }}.
+{% for conversation in conversations %}
+<i>Title:</i> {{ conversation[0] }}
+<p>
+<i>Message:</i> {{ conversation[1] }}
+<p>
+<i>Sender:</i> {{ conversation[2] }}
+<p>
+<i>Time:</i> {{ conversation[3].strftime("%Y-%m-%d %H:%M:%S") }}
+<hr>
+{% endfor %}
+<a href="/new">New conversation</a>
+<a href="/logout">Kirjaudu ulos</a>
+{% else %}
+<a href="/login">Kirjaudu sisään</a>
+{% endif %}
