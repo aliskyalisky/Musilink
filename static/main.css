@@ -1,0 +1,268 @@
+* {
+    font-family: "Verdana";
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+textarea {
+    resize: none;
+  }
+
+.header {
+    width: 100vw;
+    height: 100px;
+    margin: 0;
+    background: rgb(23,7,53);
+    background: linear-gradient(291deg, rgba(23,7,53,1) 6%, rgba(40,6,90,1) 81%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+
+
+.headerlogo {
+    font-size: xx-large;
+    color: white;
+    transition: 0.3s;
+}
+
+.headerlink {
+    color: white;
+    text-decoration: none;
+
+}
+
+.headerlogo:hover {
+    transform: scale(1.05);
+}
+
+.content {
+    overflow: hidden;
+    height: calc(100vh - 100px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background-color: #170735;
+    background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #170735 11px ), repeating-linear-gradient( #28065a55, #28065a );
+}
+
+.newconvobtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+    width: 70px;
+    height: 50px;
+    background-color: #2e1065;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.newconvobtn:hover {
+    background-color: #4c1d95;
+    transform: scale(1.05);
+}
+
+.logoutbtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    background-color: #2e1065;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.convolink {
+    text-decoration: none;
+}
+
+.conversations {
+    overflow: auto;
+    height: calc(100vh - 100px);
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: #ede9fe;
+    gap: 40px;
+    padding: 40px 0px 40px 0px;
+}
+
+.messagescontainer {
+    overflow: auto;
+    height: calc(100vh - 100px);
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: #ede9fe;
+    gap: 40px;
+    padding: 40px 0px 40px 0px;
+}
+
+.firstmessage {
+    width: 60vw;
+    background-color: #ddd6fe;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.firstmsgtext {
+    font-size: 110%;
+    overflow-wrap: break-word;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: start;
+    align-items: center;
+
+}
+
+.messagebox {
+    position: fixed;
+    bottom: 20px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.conversation {
+    width: 60vw;
+    background-color: #c4b5fd;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    transition: 0.3s;
+    border-radius: 20px;
+    color: #2e1065
+}
+
+.message {
+    width: 60vw;
+    height: auto;
+    background-color: #c4b5fd;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    transition: 0.3s;
+    border-radius: 20px;
+    color: #2e1065
+}
+
+.msgbottom {
+    width: 60vw;
+    overflow-wrap: break-word;
+}
+
+.conversation:hover {
+    transform: scale(1.05);
+    background-color: #ddd6fe;
+ }
+
+.convtop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.convbottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.loginbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    background-color: #2e1065;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none;
+}
+
+.loginbtn:hover {
+    transform: scale(1.1);
+    background-color: #4c1d95;
+ }
+
+.credientalform {
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-color: #2e1065;
+    border-radius: 20px;
+}
+
+.newconvoform {
+    height: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    background-color: #2e1065;
+    border-radius: 20px;
+}
+
+::placeholder {
+    text-align: center; 
+ }
+
+ .registertext {
+    color: white;
+    margin-top: 20px;
+ }
+
+ .registerlink {
+    text-decoration: none;
+    color: #c4b5fd;
+    transition: 0.3s;
+ }
+
+ .registerlink:hover {
+    color:white;
+    font-size: 110%;
+ }

@@ -1,8 +1,19 @@
-<form action="/login" method="post">
-    Tunnus: <input type="text" name="username">
-    <p>
-    Salasana: <input type="password" name="password">
-    <p>
-    <input type="submit" value="Kirjaudu">
-    </form>
-    Jos sinulla ei ole tunnusta, voit luoda uuden tunnuksen <a href="/register">tästä</a>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="header"><h1 class="headerlogo"><a href="/" class="headerlink">musilink</a></h1></div>
+    <div class="content">
+        <form action="/login" method="post" class="credientalform">
+            <i>{{ message }}</i>
+            <input type="text" name="username" placeholder="username">
+            <input type="password" name="password" placeholder="password">
+            <input type="submit" value="Login" class="loginbtn">
+        </form>
+            <p class="registertext">If you don't have an account yet register <a href="/register" class="registerlink">here!</a></p>
+    </div>
+</body>

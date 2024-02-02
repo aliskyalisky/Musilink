@@ -1,7 +1,17 @@
-<form action="/register" method="post">
-    Tunnus: <input type="text" name="username">
-    <p>
-    Salasana: <input type="password" name="password1">
-    <p>
-    <input type="submit" value="Luo tunnus">
-    </form>
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div class="header"><h1 class="headerlogo"><a href="/" class="headerlink">musilink</a></h1></div>
+    <div class="content">
+        <form action="/register" method="post" class="credientalform">
+            <input type="text" name="username" placeholder="username">
+            <input type="password" name="password1" placeholder="password">
+            <input type="submit" value="Create account">
+        </form>
+    </div>
+</body>

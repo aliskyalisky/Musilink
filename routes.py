@@ -18,7 +18,23 @@ def send():
     if conversations.send(title, content):
         return redirect("/")
     else:
-        return render_template("error.html", message="Viestin lähetys ei onnistunut")
+        # todo error handling
+        return render_template("/")
+    
+@app.route("/sendmessage/<int:id>", methods=["POST"])
+def send_message(id):
+    content = request.form["content"]
+    if conversations.send_message(id, content):
+        return redirect("/conversations/" + str(id))
+    else:
+        # todo error handling
+        return render_template("/")
+    
+@app.route("/conversations/<int:id>")
+def conversation(id):
+    current_conversation = conversations.get_first_post_by_id(id)
+    messages = conversations.get_messages_by_id(id)
+    return render_template("conversation.html", conversation=current_conversation, messages=messages)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -30,7 +46,7 @@ def login():
         if users.login(username, password):
             return redirect("/")
         else:
-            return render_template("error.html", message="Väärä tunnus tai salasana")
+            return render_template("login.html", message="invalid credientials")
         
 @app.route("/logout")
 def logout():
@@ -47,4 +63,5 @@ def register():
         if users.register(username, password1):
             return redirect("/")
         else:
-            return render_template("error.html", message="Rekisteröinti ei onnistunut")
+            # todo error handling
+            return render_template("/")

@@ -1,9 +1,19 @@
-<form action="/send" method="post">
-    Title: <br>
-    <textarea name="title" rows="3" cols="40"></textarea>
-    <br>
-    Message: <br>
-    <textarea name="content" rows="3" cols="40"></textarea>
-    <br>
-    <input type="submit" value="Lähetä">
-    </form>
+
+
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Conversation</title>
+</head>
+<body>
+    <div class="header"><h1 class="headerlogo"><a href="/" class="headerlink">musilink</a></h1></div>
+    <div class="content">
+        <form action="/send" method="post" class="newconvoform">
+            <textarea name="title" rows="1" cols="40" placeholder="Title"></textarea>
+            <textarea name="content" rows="3" cols="40" placeholder="Message"></textarea>
+            <input type="submit" value="Send" class="loginbtn">
+        </form>
+    </div>
+</body>

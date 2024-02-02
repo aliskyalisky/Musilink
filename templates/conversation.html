@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ conversation[0] }}</title>
+</head>
+{% if session.user_id %}
+<body>
+    <div class="header"><h1 class="headerlogo"><a href="/" class="headerlink">musilink</a></h1></div>
+    <div class="content">
+        <div class="messagescontainer">
+            <div class="firstmessage">
+                <div class="convtop">
+                    <!--- SENDER -->
+                    <b>{{ conversation[2] }}</b>
+
+                    <!--- TIME -->
+                    <p>{{ conversation[3].strftime("%Y-%m-%d %H:%M:%S") }}</p>
+                </div>
+                 
+
+                <!--- TITLE -->
+                <h1>{{ conversation[0] }}</h1>
+
+                <!--- MESSAGE -->
+                 <p class="firstmsgtext">{{ conversation[1] }}</p>
+            </div>
+            <div class="messages">
+                {% for message in messages %}
+                <div class="message">
+                    <div class="convtop">
+                        <!--- SENDER -->
+                        <b>{{ message[1] }}</b> 
+
+                        <!--- TIME-->
+                        <i>{{ message[2].strftime("%Y-%m-%d %H:%M:%S") }}</i> 
+                    </div>
+
+                    <div class="msgbottom">
+                        <!--- MESSAGE -->
+                        <i>{{ message[0] }}</i> 
+                    </div>
+                    
+                </div>   
+                {% endfor %}
+            </div>
+        </div>
+        
+    </div>
+    <form action="/sendmessage/{{  conversation[4] }}" method="post" class="messagebox">
+        <textarea name="content" rows="1" cols="50"></textarea>
+        <input type="submit" value="Send">
+    </form>
+    <a href="/" class="logoutbtn">Back</a>
+</body>
+{% else %}
+<a href="/login">Kirjaudu sisään</a>
+{% endif %}

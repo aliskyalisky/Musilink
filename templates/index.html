@@ -1,17 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<!--- LOGGED IN -->
 {% if session.user_id %}
-Olet kirjautunut sisään käyttäjänä {{ session.username }}.
-{% for conversation in conversations %}
-<i>Title:</i> {{ conversation[0] }}
-<p>
-<i>Message:</i> {{ conversation[1] }}
-<p>
-<i>Sender:</i> {{ conversation[2] }}
-<p>
-<i>Time:</i> {{ conversation[3].strftime("%Y-%m-%d %H:%M:%S") }}
-<hr>
-{% endfor %}
-<a href="/new">New conversation</a>
-<a href="/logout">Kirjaudu ulos</a>
+<body>
+<div class="header"><h1 class="headerlogo"><a href="/" class="headerlink">musilink</a></h1></div>
+<div class="content">
+    <div class="conversations">
+        <p class="conversationsheader">Click to join conversations</p>
+        {% for conversation in conversations %}
+        <a href="/conversations/{{ conversation[4] }}" class="convolink">
+            <div class="conversation">
+                <div class="convtop">
+                    <!--- SENDER -->
+                    <i>{{ conversation[2] }}</i> 
+
+                    <!--- TIME-->
+                    <i>{{ conversation[3].strftime("%Y-%m-%d %H:%M:%S") }}</i> 
+                </div>
+
+                <div class="convbottom">
+                    <!--- TITLE -->
+                    <h3>{{ conversation[0] }}</h3>
+
+                    <!--- MESSAGE -->
+                    <i>{{ conversation[1] }}</i> 
+                    
+                </div>   
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
+
+<a href="/new" class="newconvobtn">New</a>
+<a href="/logout" class="logoutbtn">Log out ({{ session.username }})</a>
+</body>
+
+<!--- NOT LOGGED IN -->
 {% else %}
-<a href="/login">Kirjaudu sisään</a>
+<body>
+    <div class="header">
+        <h1 class="headerlogo">musilink</h1>
+    </div>
+    <div class="content">
+        <a href="/login" class="loginbtn">Log in</a>
+    </div>
+</body>
 {% endif %}
