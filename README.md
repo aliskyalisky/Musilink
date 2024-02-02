@@ -18,7 +18,7 @@ Let people know who you are and what you are looking for and/or providing
 ### Install
 
 1. Clone repository and move to the rootfolder
-2. Create .env file and fill in the location of your local database and your secret key:
+2. Create .env file and fill in the location of your local database and your secret key: <br>
 DATABASE_URL=< local-database-location > <br>
 SECRET_KEY=< secret-key >
 3. Activate virtual environment and install dependencies:
