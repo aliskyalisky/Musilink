@@ -46,6 +46,6 @@ Perustoimintoja ovat:
 - Keskustelujen avaaminen ja kommentointi
 
 Työn alla:
+- Virheenkäsittely ja järkevät ilmoitukset virheellisestä syötteestä
 - Jonkunnäköinen yksinkertainen profiili-ikkuna käyttäjille
 - Hakutoiminto
-
