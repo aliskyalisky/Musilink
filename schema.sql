@@ -18,4 +18,12 @@ CREATE TABLE messages (
     sent_at TIMESTAMP,
     conversation_id INTEGER REFERENCES conversations
 );
-
+CREATE TABLE admins (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users
+);
+CREATE TABLE eventlog (
+    id SERIAL PRIMARY KEY,
+    content TEXT,
+    event_time TIMESTAMP
+);
