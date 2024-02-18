@@ -9,8 +9,8 @@
     <div class="header"><h1 class="headerlogo"><a href="/" class="headerlink">musilink</a></h1></div>
     <div class="content">
         <form action="/register" method="post" class="credientalform">
-            <input type="text" name="username" placeholder="username">
-            <input type="password" name="password1" placeholder="password">
+            <input type="text" name="username" placeholder="username" minlength="3" maxlength="10" required>
+            <input type="password" name="password1" placeholder="password" minlength="3" required>
             <input type="submit" value="Create account">
         </form>
     </div>
