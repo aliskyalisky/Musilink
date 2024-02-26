@@ -64,4 +64,4 @@ def register():
             return redirect("/")
         else:
             # todo error handling
-            return render_template("/")
+            return render_template("login.html", message="Error performing registration")
