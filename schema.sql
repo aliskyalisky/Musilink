@@ -20,7 +20,7 @@ CREATE TABLE messages (
 );
 CREATE TABLE admins (
     id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users
+    username TEXT
 );
 CREATE TABLE eventlog (
     id SERIAL PRIMARY KEY,

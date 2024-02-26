@@ -11,6 +11,11 @@
         <form action="/register" method="post" class="credientalform">
             <input type="text" name="username" placeholder="username" minlength="3" maxlength="10" required>
             <input type="password" name="password1" placeholder="password" minlength="3" required>
+            <div class="adminbox">
+                <input type="checkbox" id="admin" name="admin" value="on" />
+                <label for="admin">Admin</label>
+            </div>
+            
             <input type="submit" value="Create account">
         </form>
     </div>

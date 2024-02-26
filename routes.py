@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, request, redirect
-import users, conversations
+import users, conversations, adminloghandler
 
 @app.route("/")
 def index():
@@ -44,6 +44,7 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
         if users.login(username, password):
+            adminloghandler.insert_event(f"{username} logged in")
             return redirect("/")
         else:
             return render_template("login.html", message="invalid credientials")
@@ -58,10 +59,24 @@ def register():
     if request.method == "GET":
         return render_template("register.html")
     if request.method == "POST":
+        is_admin = False
         username = request.form["username"]
         password1 = request.form["password1"]
-        if users.register(username, password1):
+        try: 
+            admin = request.form["admin"]
+            is_admin = True
+        except:
+            pass
+        if users.register(username, password1, is_admin):
+            adminloghandler.insert_event(f"New user {username} registered")
             return redirect("/")
         else:
-            # todo error handling
             return render_template("login.html", message="Error performing registration")
+        
+@app.route("/adminlog")
+def adminlog():
+    if users.user_is_admin():
+        events = adminloghandler.get_events()
+        return render_template("adminlog.html", events=events)
+    else:
+        return redirect("/")
