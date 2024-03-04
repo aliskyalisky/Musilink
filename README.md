@@ -36,7 +36,7 @@ $ psql < schema.sql
 $ flask run
 ```
 
-### 18.2
+### 4.3
 Sovellus ei ole testattavissa Fly.iossa.
 Sovelluksen perustoiminnot toimivat paikallisesti.
 Perustoimintoja ovat:
@@ -44,7 +44,5 @@ Perustoimintoja ovat:
 - Kirjautuminen
 - Uuden keskustelun luonti
 - Keskustelujen avaaminen ja kommentointi
-
-Työn alla:
-- Admin toiminnot (Keskustelujen ja viestien poisto)
-- Admineille eventlog-sivu, jossa näkyy viimeisimmät tapahtumat (uudet viestit, kirjautumiset yms)
+- Admin-rekisteröinti
+- Tapahtumalokin avaaminen admin-käyttäjällä
